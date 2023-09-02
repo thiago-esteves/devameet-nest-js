@@ -37,4 +37,7 @@ export class UserService{
         }
         return null;
     }
+    async getUserByid(id:String ){
+        return await this.userModel.findById(id);
+    }
 }
