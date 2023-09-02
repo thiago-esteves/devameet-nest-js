@@ -15,13 +15,13 @@ export class MeetController {
 
         const result = await this.service.getMeetsByUser(userId);
 
-        return result.map((m:any)=>({
+        return result.map(m => ({
             id: m._id.toString(),
+            
             name: m.name,
             color: m.color,
             link: m.link
-
-        }) as GetMeetDto );
-
+        }) as GetMeetDto);
     }
-}
+    }
+
