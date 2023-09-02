@@ -4,6 +4,7 @@ import { Model } from 'mongoose'
 import {User,UserDocument} from './schemas/user.schema'
 import *as CryptoJS from 'crypto-js'
 import { RegisterDto } from './dtos/register.dto'
+import { UpdataUserDto } from './dtos/updateuser.dto'
 
 
 
@@ -40,4 +41,14 @@ export class UserService{
     async getUserByid(id:String ){
         return await this.userModel.findById(id);
     }
+    async updateUser(id:string,dto :UpdataUserDto){
+        return await this.userModel.findByIdAndUpdate(id,dto);
+    }
 }
+
+
+
+
+
+
+
