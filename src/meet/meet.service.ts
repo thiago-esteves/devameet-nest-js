@@ -10,7 +10,7 @@ import { gererateLink } from './helpers/linkgenerator.helper';
 
 @Injectable()
 export class MeetService {
-    getMeetsByUser(userId: any) {
+    getMeetByUser(userId: any) {
         throw new Error('Method not implemented.');
     }
 
@@ -20,8 +20,8 @@ export class MeetService {
         @InjectModel(Meet.name) private readonly model: Model<MeetDocument>,
         private readonly userService:UserService
     ){}
-    async getMeetByUser(userId:String){
-        this.logger.debug('getMeetsByser - ' +userId);
+    async getMeetsByUser(userId:String){
+        this.logger.debug('getMeetByUser - ' +userId);
         return await this.model.find({user: userId}) 
     }
     async createMeet (userId:string, dto:CreateMeetDto){
