@@ -5,6 +5,7 @@ import { MeetModule } from 'src/meet/meet.module';
 import { UserModule } from 'src/user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Position, PositionSchema } from './schemas/positioin.schema';
+import { RoomGateway } from './room.gateway';
 
 @Module({
   imports:[
@@ -14,7 +15,7 @@ import { Position, PositionSchema } from './schemas/positioin.schema';
     ])
 
   ],
-  providers: [RoomService],
+  providers: [RoomService, RoomGateway],
   controllers: [RoomController]
 })
 export class RoomModule {}
