@@ -10,6 +10,7 @@ import { UpdataUserDto } from './dtos/updateuser.dto'
 
 @Injectable()
 export class UserService{
+    [x: string]: any
     constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocument>){}
 
     async create(dto: RegisterDto){
